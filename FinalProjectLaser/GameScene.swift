@@ -26,7 +26,7 @@ extension GameScene{
     
     override func didMove(to view: SKView) {
         
-        //Background Music
+//        Background Music
 //                setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
         
         //physicls world delegate
@@ -207,10 +207,10 @@ extension GameScene{
                     addScore()
                     laserLeftHubNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
                     laserLeftHubNode.isOn = false
-//                    let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
-//                    let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
-//                    run(buttonSound)
-//                    run(laserPowerDownSound)
+                    let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
+                    let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
+                    run(buttonSound)
+                    run(laserPowerDownSound)
                 }
 
             } else if let laserRightHubNode = contact.bodyA.node as? LaserHubRight{
@@ -237,9 +237,7 @@ extension GameScene{
             addChild(projectileDestructSound)
             
             run(SKAction.wait(forDuration: 1)){
-                
                 projectileDestructSound.removeFromParent()
-                
             }
             
             guard let node = body2.node as? SKSpriteNode else { return }
@@ -288,6 +286,8 @@ extension GameScene {
     func setBackgroundMusic(atScene:SKScene, fileName:String)
     {
         let bgm:SKAudioNode = SKAudioNode(fileNamed: fileName)
+//        let volume = SKAction.changeVolume(to: 0.5, duration: 0)
+//        bgm.run(volume)
         bgm.autoplayLooped = true
         atScene.addChild(bgm)
     }
