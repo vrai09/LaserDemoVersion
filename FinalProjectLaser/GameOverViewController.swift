@@ -21,7 +21,7 @@ import SpriteKit
 import GameplayKit
 import Parse
 
-class GameOverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class GameOverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var leaderBoardTableView: UITableView!
@@ -40,7 +40,21 @@ class GameOverViewController: UIViewController, UITableViewDelegate, UITableView
         self.scoreLabel.text = String(self.score)
         queryDatabase()
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
+        nameTextField.delegate = self
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        return true
+    }
+    
+    func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
     
     func sortRankings() {
         self.leaderboardRankings = self.leaderboardRankings?.sorted(by:
