@@ -78,7 +78,11 @@
                                                 <rect key="frame" x="0.0" y="28" width="374" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Acu-5l-RCA" id="JDU-xf-J6K" customClass="LeaderBoardTableViewCell" customModule="FinalProjectLaser" customModuleProvider="target">
+<<<<<<< HEAD
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="43.666666666666664"/>
+=======
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+>>>>>>> 1218a60ed6a6d45354fe08c4b6ca3e4a4ec1a5d7
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30A-9x-W0l">
