@@ -27,7 +27,7 @@ extension GameScene{
     override func didMove(to view: SKView) {
         
 //        Background Music
-//                setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
+                setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
         
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
@@ -208,6 +208,23 @@ extension GameScene{
                     laserLeftHubNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
                     laserLeftHubNode.isOn = false
                     let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
+//                    let buttonSounds = SKAudioNode(fileNamed: "ButtonPress")
+//                    let volume = SKAction.changeVolume(to: 1.0, duration: 0)
+//                    buttonSounds.run(volume)
+//                    addChild(buttonSounds)
+//
+//                    run(SKAction.wait(forDuration: 1)){
+//                        buttonSounds.removeFromParent()
+//                    }
+//
+//                    let laserPowerDown = SKAudioNode(fileNamed: "laserPowerDown")
+//                    let volume2 = SKAction.changeVolume(to: 0.1, duration: 0)
+//                    laserPowerDown.run(volume2)
+//                    addChild(buttonSounds)
+//
+//                    run(SKAction.wait(forDuration: 1)){
+//                        laserPowerDown.removeFromParent()
+//                    }
                     let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
                     run(buttonSound)
                     run(laserPowerDownSound)
@@ -220,8 +237,27 @@ extension GameScene{
                     addScore()
                     laserRightHubNode.texture = SKTexture(imageNamed: "LaserHubRightRed")
                     laserRightHubNode.isOn = false
+                    
+                    
                     let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
+//                    let buttonSounds = SKAudioNode(fileNamed: "ButtonPress")
+//                    let volume = SKAction.changeVolume(to: 1.0, duration: 0)
+//                    buttonSounds.run(volume)
+//                    addChild(buttonSounds)
+//
+//                    run(SKAction.wait(forDuration: 1)){
+//                        buttonSounds.removeFromParent()
+//                    }
                     let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
+//                    let laserPowerDown = SKAudioNode(fileNamed: "laserPowerDown")
+//                    let volume2 = SKAction.changeVolume(to: 0.1, duration: 0)
+//                    laserPowerDown.run(volume2)
+//                    addChild(buttonSounds)
+//
+//                    run(SKAction.wait(forDuration: 1)){
+//                        laserPowerDown.removeFromParent()
+//                    }
+                    
                     run(buttonSound)
                     run(laserPowerDownSound)
                 }
@@ -231,14 +267,14 @@ extension GameScene{
 
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.projectileCategory.rawValue{
             
-            let projectileDestructSound:SKAudioNode = SKAudioNode(fileNamed: "laserPowerDown")
-            let volume:SKAction = SKAction.changeVolume(to: 0.3, duration: 0)
-            projectileDestructSound.run(volume)
-            addChild(projectileDestructSound)
-            
-            run(SKAction.wait(forDuration: 1)){
-                projectileDestructSound.removeFromParent()
-            }
+//            let projectileDestructSound:SKAudioNode = SKAudioNode(fileNamed: "laserPowerDown")
+//            let volume:SKAction = SKAction.changeVolume(to: 0.3, duration: 0)
+//            projectileDestructSound.run(volume)
+//            addChild(projectileDestructSound)
+//
+//            run(SKAction.wait(forDuration: 1)){
+//                projectileDestructSound.removeFromParent()
+//            }
             
             guard let node = body2.node as? SKSpriteNode else { return }
             
@@ -286,8 +322,8 @@ extension GameScene {
     func setBackgroundMusic(atScene:SKScene, fileName:String)
     {
         let bgm:SKAudioNode = SKAudioNode(fileNamed: fileName)
-//        let volume = SKAction.changeVolume(to: 0.5, duration: 0)
-//        bgm.run(volume)
+        let volume = SKAction.changeVolume(to: 0.1, duration: 0)
+        bgm.run(volume)
         bgm.autoplayLooped = true
         atScene.addChild(bgm)
     }
@@ -323,8 +359,6 @@ extension GameScene {
         scoreLabel.zPosition = 100
         
     }
-    
-
     
 }
 
