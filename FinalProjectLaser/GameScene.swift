@@ -14,8 +14,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MAKR: - node Properties
     var background:Background = Background()
     let hero:Hero = Hero()
-    let livesLabel:LivesLabel = LivesLabel()
-    let scoreLabel:ScoreLabel = ScoreLabel()
+//    let livesLabel:LivesLabel = LivesLabel()
+//    let scoreLabel:ScoreLabel = ScoreLabel()
+    let livesLabel:SKLabelNode = SKLabelNode(fontNamed: "The Bold Font")
+    let scoreLabel:SKLabelNode = SKLabelNode(fontNamed: "The Bold Font")
     var spawnInterval:Double = 3
 
 }
@@ -99,6 +101,7 @@ extension GameScene{
         borderFrame.restitution = 1
         self.physicsBody = borderFrame
         
+        setUpLabels()
         self.addChild(livesLabel)
 
         self.addChild(scoreLabel)
@@ -228,6 +231,17 @@ extension GameScene{
 
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.projectileCategory.rawValue{
             
+            let projectileDestructSound:SKAudioNode = SKAudioNode(fileNamed: "laserPowerDown")
+            let volume:SKAction = SKAction.changeVolume(to: 0.3, duration: 0)
+            projectileDestructSound.run(volume)
+            addChild(projectileDestructSound)
+            
+            run(SKAction.wait(forDuration: 1)){
+                
+                projectileDestructSound.removeFromParent()
+                
+            }
+            
             guard let node = body2.node as? SKSpriteNode else { return }
             
             projectileExplosion(projectileNode: node)
@@ -290,6 +304,24 @@ extension GameScene {
     
     func showGameOverScreen() {
         self.view?.window?.rootViewController?.performSegue(withIdentifier: "showGameOver", sender: nil)
+    }
+    
+    func setUpLabels(){
+        
+        livesLabel.text = "Lives: 3"
+        livesLabel.fontSize = 70
+        livesLabel.fontColor = SKColor.white
+        livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        livesLabel.position = CGPoint(x: -350, y: -600)
+        livesLabel.zPosition = 100
+        
+        scoreLabel.text = "0"
+        scoreLabel.fontSize = 70
+        scoreLabel.fontColor = SKColor.white
+        scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
+        scoreLabel.position = CGPoint(x: 350, y: 600)
+        scoreLabel.zPosition = 100
+        
     }
     
 
