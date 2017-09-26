@@ -111,7 +111,7 @@ class GameOverViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func mainMenu(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
-
+        
     }
     
     

@@ -32,9 +32,7 @@ class Background: SKSpriteNode {
     func backgroundSpeedIncrease() {
             self.backgroundSpeed = self.backgroundSpeed * 1.2
     }
-    
-    
-    
+
     func moveBackgrounds(scene:SKScene, hero:Hero) {
         
         scene.enumerateChildNodes(withName:"Background")

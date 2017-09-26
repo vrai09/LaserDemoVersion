@@ -19,6 +19,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let livesLabel:SKLabelNode = SKLabelNode(fontNamed: "The Bold Font")
     let scoreLabel:SKLabelNode = SKLabelNode(fontNamed: "The Bold Font")
     var spawnInterval:Double = 3
+    var gameIsOver:Bool = false
 
 }
 
@@ -26,6 +27,7 @@ extension GameScene{
     
     override func didMove(to view: SKView) {
         
+
 //        Background Music
                 setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
         
@@ -33,18 +35,11 @@ extension GameScene{
         self.physicsWorld.contactDelegate = self
         view.showsPhysics = false
 
-        func decreaseLaserSpawnTime () {
-            removeAction(forKey: "spawnLoop")
-            self.spawnInterval = self.spawnInterval * 0.8
-            let waitAction = SKAction.wait(forDuration: (self.spawnInterval), withRange: (self.spawnInterval) * 1.5)
-            let spawnLaserAction = SKAction.run(randomLaserSelection)
-            let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([ waitAction, spawnLaserAction]))
-            run(spawnEntireAction, withKey: "spawnLoop")
-        }
+        
 
         // MARK: - HELLO
         
-        let wait = SKAction.wait(forDuration:20.0)
+        let wait = SKAction.wait(forDuration:10.0)
         let decreaseTimeInterval = SKAction.run(decreaseLaserSpawnTime)
         let speedUpBackgroundAction = SKAction.run(background.backgroundSpeedIncrease)
         let speedUpLeftLaserAction = SKAction.run(Laser.leftLaserSpeedIncrease)
@@ -52,32 +47,6 @@ extension GameScene{
         let increaseBackgroundSpeedAction = SKAction.repeatForever(SKAction.sequence([wait, speedUpBackgroundAction, speedUpLeftLaserAction, speedUpRightLaserAction, decreaseTimeInterval]))
         run(increaseBackgroundSpeedAction)
         
-        func spawnLeftLasers()
-        {
-            let laser = Laser()
-            self.addChild(laser.laserHub)
-            
-            
-        }
-        
-        func spawnRightLasers()
-        {
-            let rightLaser = LaserRight()
-            self.addChild(rightLaser.laserHubRight)
-        }
-        
-        func randomLaserSelection()
-        {
-            let selection = Int(arc4random_uniform(2)+1)
-            
-            if selection == 1 {
-                spawnLeftLasers()
-            }else{
-                spawnRightLasers()
-            }
-        }
-
-
         removeAction(forKey: "spawnLoop")
         self.spawnInterval = self.spawnInterval * 0.95
         
@@ -85,10 +54,6 @@ extension GameScene{
         let spawnLaserAction = SKAction.run(randomLaserSelection)
         let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([ waitAction, spawnLaserAction]))
         run(spawnEntireAction, withKey: "spawnLoop")
-        
-        
-        
-//        hero.setUpHero()
         
         self.addChild(hero)
         
@@ -167,6 +132,40 @@ extension GameScene{
 //        heroFireProjectile()
     }
     
+    func spawnLeftLasers()
+    {
+        let laser = Laser()
+        self.addChild(laser.laserHub)
+        
+        
+    }
+    
+    func spawnRightLasers()
+    {
+        let rightLaser = LaserRight()
+        self.addChild(rightLaser.laserHubRight)
+    }
+    
+    func randomLaserSelection()
+    {
+        let selection = Int(arc4random_uniform(2)+1)
+        
+        if selection == 1 {
+            spawnLeftLasers()
+        }else{
+            spawnRightLasers()
+        }
+    }
+    
+    func decreaseLaserSpawnTime () {
+        removeAction(forKey: "spawnLoop")
+        self.spawnInterval = self.spawnInterval * 0.8
+        let waitAction = SKAction.wait(forDuration: (self.spawnInterval), withRange: (self.spawnInterval) * 1.5)
+        let spawnLaserAction = SKAction.run(randomLaserSelection)
+        let spawnEntireAction = SKAction.repeatForever(SKAction.sequence([ waitAction, spawnLaserAction]))
+        run(spawnEntireAction, withKey: "spawnLoop")
+    }
+    
 //    func heroFireProjectile(){
 //        let fire = SKEmitterNode(fileNamed: "HeroShootingFire")
 //        fire?.zPosition = 5
@@ -186,6 +185,8 @@ extension GameScene{
 extension GameScene{
     
     func didBegin(_ contact: SKPhysicsContact) {
+        
+        
 
         var body1 = SKPhysicsBody()
         var body2 = SKPhysicsBody()
