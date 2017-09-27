@@ -21,6 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var spawnInterval:Double = 3
     var gameIsOver:Bool = false
 
+
 }
 
 extension GameScene{
@@ -34,6 +35,8 @@ extension GameScene{
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
         view.showsPhysics = false
+        view.showsFPS = true
+        view.showsNodeCount = true
 
         
 
@@ -208,27 +211,21 @@ extension GameScene{
                     addScore()
                     laserLeftHubNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
                     laserLeftHubNode.isOn = false
-                    let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
-//                    let buttonSounds = SKAudioNode(fileNamed: "ButtonPress")
-//                    let volume = SKAction.changeVolume(to: 1.0, duration: 0)
-//                    buttonSounds.run(volume)
-//                    addChild(buttonSounds)
-//
-//                    run(SKAction.wait(forDuration: 1)){
-//                        buttonSounds.removeFromParent()
-//                    }
-//
-//                    let laserPowerDown = SKAudioNode(fileNamed: "laserPowerDown")
-//                    let volume2 = SKAction.changeVolume(to: 0.1, duration: 0)
-//                    laserPowerDown.run(volume2)
-//                    addChild(buttonSounds)
-//
-//                    run(SKAction.wait(forDuration: 1)){
-//                        laserPowerDown.removeFromParent()
-//                    }
-                    let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
-                    run(buttonSound)
-                    run(laserPowerDownSound)
+//                    let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
+                    let buttonSounds = SKAudioNode(fileNamed: "ButtonPress")
+                    let volume = SKAction.changeVolume(to: 1.0, duration: 0)
+                    buttonSounds.run(volume)
+                    addChild(buttonSounds)
+
+                    run(SKAction.wait(forDuration: 0.1)){
+                        buttonSounds.removeFromParent()
+                    }
+                    laserPowerDownSound()
+
+                    
+//                    let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
+//                    run(buttonSound)
+//                    run(laserPowerDownSound)
                 }
 
             } else if let laserRightHubNode = contact.bodyA.node as? LaserHubRight{
@@ -240,27 +237,20 @@ extension GameScene{
                     laserRightHubNode.isOn = false
                     
                     
-                    let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
-//                    let buttonSounds = SKAudioNode(fileNamed: "ButtonPress")
-//                    let volume = SKAction.changeVolume(to: 1.0, duration: 0)
-//                    buttonSounds.run(volume)
-//                    addChild(buttonSounds)
-//
-//                    run(SKAction.wait(forDuration: 1)){
-//                        buttonSounds.removeFromParent()
-//                    }
-                    let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
-//                    let laserPowerDown = SKAudioNode(fileNamed: "laserPowerDown")
-//                    let volume2 = SKAction.changeVolume(to: 0.1, duration: 0)
-//                    laserPowerDown.run(volume2)
-//                    addChild(buttonSounds)
-//
-//                    run(SKAction.wait(forDuration: 1)){
-//                        laserPowerDown.removeFromParent()
-//                    }
+//                    let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
+                    let buttonSounds = SKAudioNode(fileNamed: "ButtonPress")
+                    let volume = SKAction.changeVolume(to: 1.0, duration: 0)
+                    buttonSounds.run(volume)
+                    addChild(buttonSounds)
+
+                    run(SKAction.wait(forDuration: 0.1)){
+                        buttonSounds.removeFromParent()
+                    }
+//                    let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
+                    laserPowerDownSound()
                     
-                    run(buttonSound)
-                    run(laserPowerDownSound)
+//                    run(buttonSound)
+//                    run(laserPowerDownSound)
                 }
             }
         }
@@ -269,13 +259,14 @@ extension GameScene{
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.projectileCategory.rawValue{
             
 //            let projectileDestructSound:SKAudioNode = SKAudioNode(fileNamed: "laserPowerDown")
-//            let volume:SKAction = SKAction.changeVolume(to: 0.3, duration: 0)
+//            let volume:SKAction = SKAction.changeVolume(to: 0.05, duration: 0)
 //            projectileDestructSound.run(volume)
 //            addChild(projectileDestructSound)
 //
-//            run(SKAction.wait(forDuration: 1)){
+//            run(SKAction.wait(forDuration: 0.5)){
 //                projectileDestructSound.removeFromParent()
 //            }
+
             
             guard let node = body2.node as? SKSpriteNode else { return }
             
@@ -299,6 +290,17 @@ extension GameScene{
 
     }
     
+    func laserPowerDownSound(){
+        let laserPowerDown = SKAudioNode(fileNamed: "laserPowerDown")
+        let volume2 = SKAction.changeVolume(to: 0.1, duration: 0)
+        laserPowerDown.run(volume2)
+        addChild(laserPowerDown)
+        
+        run(SKAction.wait(forDuration: 1)){
+            laserPowerDown.removeFromParent()
+        }
+        
+    }
     func projectileExplosion(projectileNode:SKSpriteNode){
         
         let explosion = SKEmitterNode(fileNamed: "ProjectileSpark")
@@ -323,7 +325,7 @@ extension GameScene {
     func setBackgroundMusic(atScene:SKScene, fileName:String)
     {
         let bgm:SKAudioNode = SKAudioNode(fileNamed: fileName)
-        let volume = SKAction.changeVolume(to: 0.1, duration: 0)
+        let volume = SKAction.changeVolume(to: 0.01, duration: 0)
         bgm.run(volume)
         bgm.autoplayLooped = true
         atScene.addChild(bgm)
