@@ -40,6 +40,7 @@ class GameOverViewController: UIViewController, UITableViewDelegate, UITableView
         self.scoreLabel.text = String(self.score)
         queryDatabase()
         
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
         
