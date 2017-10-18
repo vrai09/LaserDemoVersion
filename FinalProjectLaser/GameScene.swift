@@ -14,8 +14,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MAKR: - node Properties
     var background:Background = Background()
     let hero:Hero = Hero()
-//    let livesLabel:LivesLabel = LivesLabel()
-//    let scoreLabel:ScoreLabel = ScoreLabel()
     let livesLabel:SKLabelNode = SKLabelNode(fontNamed: "The Bold Font")
     let scoreLabel:SKLabelNode = SKLabelNode(fontNamed: "The Bold Font")
     var spawnInterval:Double = 3
@@ -27,18 +25,10 @@ extension GameScene{
     
     override func didMove(to view: SKView) {
         
-
-//        Background Music
-                setBackgroundMusic(atScene: self, fileName: "Elektronomia - Sky High.mp3")
-        
         //physicls world delegate
         self.physicsWorld.contactDelegate = self
         view.showsPhysics = false
 
-        
-
-        // MARK: - HELLO
-        
         let wait = SKAction.wait(forDuration:10.0)
         let decreaseTimeInterval = SKAction.run(decreaseLaserSpawnTime)
         let speedUpBackgroundAction = SKAction.run(background.backgroundSpeedIncrease)
@@ -186,8 +176,6 @@ extension GameScene{
     
     func didBegin(_ contact: SKPhysicsContact) {
         
-        
-
         var body1 = SKPhysicsBody()
         var body2 = SKPhysicsBody()
         
@@ -203,34 +191,21 @@ extension GameScene{
             
             if let laserLeftHubNode = contact.bodyA.node as? LaserHub{
                 
-                if laserLeftHubNode.isOn == true{
+                if laserLeftHubNode.isOn == true {
                     laserLeftHubNode.laserBeam.removeFromParent()
                     addScore()
                     laserLeftHubNode.texture = SKTexture(imageNamed: "LaserHubLeftRed")
                     laserLeftHubNode.isOn = false
-                    let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
-//                    let buttonSounds = SKAudioNode(fileNamed: "ButtonPress")
-//                    let volume = SKAction.changeVolume(to: 1.0, duration: 0)
-//                    buttonSounds.run(volume)
-//                    addChild(buttonSounds)
-//
-//                    run(SKAction.wait(forDuration: 1)){
-//                        buttonSounds.removeFromParent()
-//                    }
-//
-//                    let laserPowerDown = SKAudioNode(fileNamed: "laserPowerDown")
-//                    let volume2 = SKAction.changeVolume(to: 0.1, duration: 0)
-//                    laserPowerDown.run(volume2)
-//                    addChild(buttonSounds)
-//
-//                    run(SKAction.wait(forDuration: 1)){
-//                        laserPowerDown.removeFromParent()
-//                    }
-                    let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
-                    run(buttonSound)
-                    run(laserPowerDownSound)
+                    let buttonSounds = SKAudioNode(fileNamed: "ButtonPress")
+                    let volume = SKAction.changeVolume(to: 1.0, duration: 0)
+                    buttonSounds.run(volume)
+                    addChild(buttonSounds)
+                    run(SKAction.wait(forDuration: 0.1)){
+                        buttonSounds.removeFromParent()
+                    }
+                    laserPowerDownSound()
                 }
-
+                
             } else if let laserRightHubNode = contact.bodyA.node as? LaserHubRight{
                 
                 if laserRightHubNode.isOn == true{
@@ -238,52 +213,27 @@ extension GameScene{
                     addScore()
                     laserRightHubNode.texture = SKTexture(imageNamed: "LaserHubRightRed")
                     laserRightHubNode.isOn = false
+                    let buttonSounds = SKAudioNode(fileNamed: "ButtonPress")
+                    let volume = SKAction.changeVolume(to: 1.0, duration: 0)
+                    buttonSounds.run(volume)
+                    addChild(buttonSounds)
                     
+                    run(SKAction.wait(forDuration: 0.1)) {
+                        buttonSounds.removeFromParent()
+                    }
                     
-                    let buttonSound = SKAction.playSoundFileNamed("ButtonPress", waitForCompletion: false)
-//                    let buttonSounds = SKAudioNode(fileNamed: "ButtonPress")
-//                    let volume = SKAction.changeVolume(to: 1.0, duration: 0)
-//                    buttonSounds.run(volume)
-//                    addChild(buttonSounds)
-//
-//                    run(SKAction.wait(forDuration: 1)){
-//                        buttonSounds.removeFromParent()
-//                    }
-                    let laserPowerDownSound = SKAction.playSoundFileNamed("laserPowerDown", waitForCompletion: false)
-//                    let laserPowerDown = SKAudioNode(fileNamed: "laserPowerDown")
-//                    let volume2 = SKAction.changeVolume(to: 0.1, duration: 0)
-//                    laserPowerDown.run(volume2)
-//                    addChild(buttonSounds)
-//
-//                    run(SKAction.wait(forDuration: 1)){
-//                        laserPowerDown.removeFromParent()
-//                    }
-                    
-                    run(buttonSound)
-                    run(laserPowerDownSound)
+                    laserPowerDownSound()
                 }
             }
         }
         
-
-        if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.projectileCategory.rawValue{
-            
-//            let projectileDestructSound:SKAudioNode = SKAudioNode(fileNamed: "laserPowerDown")
-//            let volume:SKAction = SKAction.changeVolume(to: 0.3, duration: 0)
-//            projectileDestructSound.run(volume)
-//            addChild(projectileDestructSound)
-//
-//            run(SKAction.wait(forDuration: 1)){
-//                projectileDestructSound.removeFromParent()
-//            }
+        if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.projectileCategory.rawValue {
             
             guard let node = body2.node as? SKSpriteNode else { return }
-            
             projectileExplosion(projectileNode: node)
             body2.node?.removeFromParent()
-            
         }
-
+        
         if body1.categoryBitMask == CategoryEnum.laserBeamCategory.rawValue && body2.categoryBitMask == CategoryEnum.heroCategory.rawValue {
             
             if hero.lives > 0{
@@ -295,10 +245,19 @@ extension GameScene{
                 showGameOverScreen()
             }
         }
-        
-
     }
     
+    func laserPowerDownSound(){
+        let laserPowerDown = SKAudioNode(fileNamed: "laserPowerDown")
+        let volume2 = SKAction.changeVolume(to: 0.1, duration: 0)
+        laserPowerDown.run(volume2)
+        addChild(laserPowerDown)
+        
+        run(SKAction.wait(forDuration: 1)){
+            laserPowerDown.removeFromParent()
+        }
+        
+    }
     func projectileExplosion(projectileNode:SKSpriteNode){
         
         let explosion = SKEmitterNode(fileNamed: "ProjectileSpark")
@@ -309,12 +268,8 @@ extension GameScene{
         self.run(SKAction.wait(forDuration: 2)){
             explosion?.removeFromParent()
         }
-        
     }
-    
-    
 }
-
 
 
 //MARK: - functions

@@ -110,6 +110,8 @@ class GameOverViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func mainMenu(_ sender: Any) {
         
+        Laser.leftLaserMovementSpeed = 4.0
+        LaserRight.rightLaserMovementSpeed = 4.0
         self.dismiss(animated: true, completion: nil)
         
     }

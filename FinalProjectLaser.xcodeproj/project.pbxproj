@@ -24,7 +24,6 @@
 		4DDF1EEB1F6B555300B84C62 /* ProjectileFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EEA1F6B555300B84C62 /* ProjectileFire.sks */; };
 		4DDF1EEF1F6B58A600B84C62 /* LaserBeamFX.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EEE1F6B58A600B84C62 /* LaserBeamFX.sks */; };
 		4DDF1EF11F6B645500B84C62 /* LaserBeamSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EF01F6B645500B84C62 /* LaserBeamSmoke.sks */; };
-		4DDF1EF51F6C4FD500B84C62 /* HeroShootingFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */; };
 		595D7D891F7206FB001645E8 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595D7D881F7206FB001645E8 /* GameOverViewController.swift */; };
 		595D7D8D1F720A78001645E8 /* LeaderBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595D7D8C1F720A78001645E8 /* LeaderBoardTableViewCell.swift */; };
 		684C910D1F71C03B00F3A111 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 684C910C1F71C03B00F3A111 /* MainMenu.sks */; };
@@ -66,7 +65,6 @@
 		4DDF1EEA1F6B555300B84C62 /* ProjectileFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ProjectileFire.sks; sourceTree = "<group>"; };
 		4DDF1EEE1F6B58A600B84C62 /* LaserBeamFX.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaserBeamFX.sks; sourceTree = "<group>"; };
 		4DDF1EF01F6B645500B84C62 /* LaserBeamSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaserBeamSmoke.sks; sourceTree = "<group>"; };
-		4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeroShootingFire.sks; sourceTree = "<group>"; };
 		595D7D881F7206FB001645E8 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		595D7D8C1F720A78001645E8 /* LeaderBoardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardTableViewCell.swift; sourceTree = "<group>"; };
 		684C910C1F71C03B00F3A111 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
@@ -177,15 +175,14 @@
 		68775FC41F6A096D00102197 /* Particles */ = {
 			isa = PBXGroup;
 			children = (
+				4DDF1EEE1F6B58A600B84C62 /* LaserBeamFX.sks */,
 				68775FC71F6A150A00102197 /* LeftLaserSpark.sks */,
-				4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */,
+				4DDF1EF01F6B645500B84C62 /* LaserBeamSmoke.sks */,
 				68775FC91F6A19C100102197 /* RightLaserSpark.sks */,
 				4DDF1EE41F6B31BE00B84C62 /* ProjectileSpark.sks */,
 				4DDF1EEA1F6B555300B84C62 /* ProjectileFire.sks */,
 				684C91151F71E9DA00F3A111 /* HeroFire.sks */,
 				684C91131F71E72200F3A111 /* HeroSmoke.sks */,
-				4DDF1EF01F6B645500B84C62 /* LaserBeamSmoke.sks */,
-				4DDF1EEE1F6B58A600B84C62 /* LaserBeamFX.sks */,
 			);
 			name = Particles;
 			sourceTree = "<group>";
@@ -312,7 +309,6 @@
 				4DDF1EE61F6B31BE00B84C62 /* ProjectileSpark.sks in Resources */,
 				68775FD21F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav in Resources */,
 				684C91161F71E9DA00F3A111 /* HeroFire.sks in Resources */,
-				4DDF1EF51F6C4FD500B84C62 /* HeroShootingFire.sks in Resources */,
 				4DDF1EEB1F6B555300B84C62 /* ProjectileFire.sks in Resources */,
 				4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */,
 				68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */,
