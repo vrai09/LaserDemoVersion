@@ -50,10 +50,9 @@ class GameOverViewController: UIViewController, UITableViewDelegate, UITableView
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nameTextField.resignFirstResponder()
         return true
-
     }
     
-    func hideKeyboard() {
+    @objc func hideKeyboard() {
         view.endEditing(true)
     }
     
@@ -113,7 +112,8 @@ class GameOverViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func mainMenu(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
-
+        Laser.leftLaserMovementSpeed = 4.0
+        LaserRight.rightLaserMovementSpeed = 4.0
     }
     
     

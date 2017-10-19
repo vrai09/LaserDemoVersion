@@ -12,7 +12,6 @@
 		4D0C7EFA1F672C8E003C861C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EF91F672C8E003C861C /* Hero.swift */; };
 		4D0C7EFE1F688D7E003C861C /* Projectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C7EFD1F688D7E003C861C /* Projectile.swift */; };
 		4D71D9551F73BC3B00E1CB4A /* theBoldFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D71D9541F73BBBC00E1CB4A /* theBoldFont.ttf */; };
-		4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */; };
 		4DBDB5CE1F5F676E007014D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */; };
 		4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DBDB5CF1F5F676E007014D8 /* GameScene.sks */; };
 		4DBDB5D41F5F676E007014D8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBDB5D31F5F676E007014D8 /* GameScene.swift */; };
@@ -24,7 +23,6 @@
 		4DDF1EEB1F6B555300B84C62 /* ProjectileFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EEA1F6B555300B84C62 /* ProjectileFire.sks */; };
 		4DDF1EEF1F6B58A600B84C62 /* LaserBeamFX.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EEE1F6B58A600B84C62 /* LaserBeamFX.sks */; };
 		4DDF1EF11F6B645500B84C62 /* LaserBeamSmoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EF01F6B645500B84C62 /* LaserBeamSmoke.sks */; };
-		4DDF1EF51F6C4FD500B84C62 /* HeroShootingFire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */; };
 		595D7D891F7206FB001645E8 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595D7D881F7206FB001645E8 /* GameOverViewController.swift */; };
 		595D7D8D1F720A78001645E8 /* LeaderBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595D7D8C1F720A78001645E8 /* LeaderBoardTableViewCell.swift */; };
 		684C910D1F71C03B00F3A111 /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 684C910C1F71C03B00F3A111 /* MainMenu.sks */; };
@@ -51,7 +49,6 @@
 		4D0C7EF91F672C8E003C861C /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		4D0C7EFD1F688D7E003C861C /* Projectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projectile.swift; sourceTree = "<group>"; };
 		4D71D9541F73BBBC00E1CB4A /* theBoldFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = theBoldFont.ttf; sourceTree = "<group>"; };
-		4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Elektronomia - Sky High.mp3"; sourceTree = "<group>"; };
 		4DBDB5CA1F5F676E007014D8 /* FinalProjectLaser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProjectLaser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DBDB5CF1F5F676E007014D8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -66,7 +63,6 @@
 		4DDF1EEA1F6B555300B84C62 /* ProjectileFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ProjectileFire.sks; sourceTree = "<group>"; };
 		4DDF1EEE1F6B58A600B84C62 /* LaserBeamFX.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaserBeamFX.sks; sourceTree = "<group>"; };
 		4DDF1EF01F6B645500B84C62 /* LaserBeamSmoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LaserBeamSmoke.sks; sourceTree = "<group>"; };
-		4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeroShootingFire.sks; sourceTree = "<group>"; };
 		595D7D881F7206FB001645E8 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		595D7D8C1F720A78001645E8 /* LeaderBoardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardTableViewCell.swift; sourceTree = "<group>"; };
 		684C910C1F71C03B00F3A111 /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
@@ -143,7 +139,6 @@
 				4DBDB5D11F5F676E007014D8 /* Actions.sks */,
 				4DBDB5D71F5F676E007014D8 /* Main.storyboard */,
 				4DBDB5CD1F5F676E007014D8 /* AppDelegate.swift */,
-				4D791CE91F61505F00656D7B /* Elektronomia - Sky High.mp3 */,
 				4DBDB5DA1F5F676E007014D8 /* Assets.xcassets */,
 				4DBDB5DC1F5F676E007014D8 /* LaunchScreen.storyboard */,
 				4DBDB5DF1F5F676E007014D8 /* Info.plist */,
@@ -178,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				68775FC71F6A150A00102197 /* LeftLaserSpark.sks */,
-				4DDF1EF41F6C4FD500B84C62 /* HeroShootingFire.sks */,
 				68775FC91F6A19C100102197 /* RightLaserSpark.sks */,
 				4DDF1EE41F6B31BE00B84C62 /* ProjectileSpark.sks */,
 				4DDF1EEA1F6B555300B84C62 /* ProjectileFire.sks */,
@@ -274,12 +268,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Jaewon Kim";
 				TargetAttributes = {
 					4DBDB5C91F5F676E007014D8 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = K95R2XCRT4;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -312,7 +307,6 @@
 				4DDF1EE61F6B31BE00B84C62 /* ProjectileSpark.sks in Resources */,
 				68775FD21F6CA03000102197 /* 37155__volivieri__soccer-ball-hit-ground-02.wav in Resources */,
 				684C91161F71E9DA00F3A111 /* HeroFire.sks in Resources */,
-				4DDF1EF51F6C4FD500B84C62 /* HeroShootingFire.sks in Resources */,
 				4DDF1EEB1F6B555300B84C62 /* ProjectileFire.sks in Resources */,
 				4DBDB5D91F5F676E007014D8 /* Main.storyboard in Resources */,
 				68775FCA1F6A19C100102197 /* RightLaserSpark.sks in Resources */,
@@ -320,7 +314,6 @@
 				4DBDB5D01F5F676E007014D8 /* GameScene.sks in Resources */,
 				4DBDB5DB1F5F676E007014D8 /* Assets.xcassets in Resources */,
 				684C91141F71E72200F3A111 /* HeroSmoke.sks in Resources */,
-				4D791CEA1F61505F00656D7B /* Elektronomia - Sky High.mp3 in Resources */,
 				4DDF1EF11F6B645500B84C62 /* LaserBeamSmoke.sks in Resources */,
 				684C910D1F71C03B00F3A111 /* MainMenu.sks in Resources */,
 				4DDF1EEF1F6B58A600B84C62 /* LaserBeamFX.sks in Resources */,
@@ -443,7 +436,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -451,7 +446,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -493,7 +492,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -501,7 +502,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -531,13 +536,15 @@
 			baseConfigurationReference = 6AA00057A3BD8681B39A621A /* Pods-FinalProjectLaser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = K95R2XCRT4;
 				INFOPLIST_FILE = FinalProjectLaser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaewonkim.FinalProjectLaser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -546,13 +553,15 @@
 			baseConfigurationReference = E4149E19840086B440C364A2 /* Pods-FinalProjectLaser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = K95R2XCRT4;
 				INFOPLIST_FILE = FinalProjectLaser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaewonkim.FinalProjectLaser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

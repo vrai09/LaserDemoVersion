@@ -43,17 +43,7 @@ class MenuScene: SKScene {
                     view?.presentScene(scene)
                 }
                 
-            }/*else if atPoint(location).name == "Settings" {
-                
-                /*if let settingsScene = SettingsScene(fileNamed: "SettingsScene") {
-                 settingsScene.scaleMode = .resizeFill
-                 view?.presentScene(settingsScene)
-                 }*/
-                let vc = self.view?.window?.rootViewController
-                let gameOverVC = GameOverViewController()
-                vc?.present(gameOverVC, animated: true, completion: nil)
-                
-            }*/
+            }
         }
         
     }
